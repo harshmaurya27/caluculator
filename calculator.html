@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE CALCULATOR</title>
+    <link rel="stylesheet" type="text/css" href="calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <script>
+
+        // Use insert() function for inserting the number in our textview.
+        function insert(num) 
+        {
+        document.forms.screen.value = document.forms.screen.value + num;
+        }
+
+        // Use equal() function for returning the result based on our passed values.
+        function equal()
+        {
+        var exp = document.forms.screen.value;
+        if(exp)
+        {
+        document.forms.screen.value = eval(exp)
+        }
+        }
+
+        /* Here, we use to create a backspace() function for removal of the number at the end of the every numeric series in the textview. */
+        function backspace()
+        {
+        var exp = document.forms.screen.value;
+        document.forms.screen.value = exp.substring(0, exp.length - 1); /* remove the element from total length ? 1 */
+        }
+
+
+    </script>
+</head>
+<body>
+    <div align="center">
+        <h1>SIMPLE CALCULATOR</h1>
+        <form name="forms">
+            <div class="calculator">
+                <input type="text" id="answer" name="screen"><br>
+                <input type="button" value="7" onclick= "insert(7)">
+                <input type="button" value="8" onclick="insert(8)">
+                <input type="button" value="9" onclick="insert(9)">
+                <input type="button" value="/" onclick="insert('/')">
+                <input type="button" class="btn-red" value="AC" onclick="form.screen.value = ''"><br>
+                <input type="button" value="4" onclick="insert(4)">
+                <input type="button" value="5" onclick="insert(5)">
+                <input type="button" value="6" onclick="insert(6)">
+                <input type="button" value="*" onclick="insert('*')">
+                <input type="button" value="%" onclick="insert('%')"><br>
+                <input type="button" value="1" onclick="insert(1)">
+                <input type="button" value="2" onclick="insert(2)">
+                <input type="button" value="3" onclick="insert(3)">
+                <input type="button" value="+" onclick="insert('+')">
+                <input type="button" value="-" onclick="insert('-')"><br>
+                <input type="button" value="0" onclick="insert(0)">
+                <input type="button" value="00" onclick="insert(00)">
+                <input type="button" value="DEL" onclick="backspace()">
+                <input type="button" value="." onclick="insert('.')">
+                <input type="button" class="btn-green" value="=" onclick= "equal()">
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
